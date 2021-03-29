@@ -13,10 +13,32 @@ const prevArrow2 = document.querySelector(".prev-two");
 let mySlider1;
 let mySlider2;
 
-function setupSliders() {
-    if (screen && screen.width < 500) { 
+function resize() {
+let cardBlock;
+    if (window.innerWidth <= 500) { 
+        cardBlock = 1;
+    } else if (window.innerWidth <= 800) {
+        cardBlock = 2;
+    } else {
+        cardBlock = 3;
+    }
+
+    if(mySlider1.itemsToShow != cardBlock) {
+        mySlider1.itemsToShow = cardBlock;
+        mySlider2.itemsToShow = cardBlock;
+        mySlider1.init(0);
+        mySlider2.init(0);
+    }
+}
+window.onresize = resize;
+
+function setupSliders() {    
+    if (screen && screen.width <= 500) { 
         mySlider1 = new Slider("#mySlide1",1);
         mySlider2 = new Slider("#mySlide2",1);
+    } else if (screen && screen.width <= 800) {
+        mySlider1 = new Slider("#mySlide1",2);
+        mySlider2 = new Slider("#mySlide2",2);
     } else {
         mySlider1 = new Slider("#mySlide1",3);
         mySlider2 = new Slider("#mySlide2",3);
@@ -45,7 +67,7 @@ function setupPage(data) {
 }
 function setupPageFail(error) {
     console.log(error);
-    document.querySelector("#warning").innerHTML = "Data is still loading, try again...";
+    document.querySelector(".warning").innerHTML = "Data is still loading, try again...";
 }
 
 getDataFromDB(setupPage,setupPageFail);

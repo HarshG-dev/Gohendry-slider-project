@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f6f6f6;
+    height: 100%;
 }
 h1 {
     font-size: 28px;
@@ -65,6 +66,7 @@ img {
     flex-flow: wrap;
     justify-content: center;
     margin-bottom:100px;
+    min-height: 100%;
 }
 .top_header {
     border-bottom: 3px solid #3a3a3a;
@@ -105,6 +107,7 @@ img {
     background: #ffffff;
     padding: 0;
     width: 308px;
+    position: relative;
 }
 .slider__block:nth-child(2n) {
     margin-right: 26px;
@@ -161,8 +164,13 @@ img {
     font-weight: bold;
     margin-left: 19px;
     padding-bottom: 19px;
-    bottom: 5%;
-    position: relative;
+    bottom: 0;
+    position: absolute;
+}
+.warning {
+    font-size: 13px;
+    color: #ff0000;
+    padding-left: 35px;
 }
 .footer-content {
     margin: 50px auto 0;
@@ -184,9 +192,6 @@ img {
 @media (min-width: 480px) and (max-width: 768px) {
     h2 {
         font-size: 18px;
-    }
-    .slider__block {
-        width: 29%;
     }
     .slider__content {
         padding: 0 15px;
