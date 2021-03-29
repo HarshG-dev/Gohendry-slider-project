@@ -8,3 +8,5 @@ function getDataFromDB(cbOK, cbFail) {
         cbFail(error);
     }); 
 }
+
+export { getDataFromDB };

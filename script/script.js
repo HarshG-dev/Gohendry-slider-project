@@ -1,3 +1,6 @@
+import { Slider } from "./slider-module.js";
+import { getDataFromDB } from "./backendDB.js";
+
 const slider1 = document.getElementById("slider-one");
 const slider2 = document.getElementById("slider-two");
 
@@ -36,11 +39,9 @@ function setupPage(data) {
         if(index >= data.cards.length - 8) {
             newCard = createCardElements("mySlide2",element.title,element.subtitle,element.text,element.image_url);
             slider2.appendChild(newCard);
-        }         
-        console.log(newCard);
+        }     
     });
     setupSliders();
-    console.log(data.cards.length);
 }
 function setupPageFail(error) {
     console.log(error);
@@ -59,7 +60,7 @@ function createCardElements(cardID, title, subtitle, text, imageURL) {
                         '<p class="text">' + text + '</p>' +
                     '</div>' +
                     '<a class="learn-more" href="https://www.gohenry.com/uk/" target="_blank">Learn more</a>';
-    card = document.createElement('div');
+    let card = document.createElement('div');
     card.id = cardID;
     card.classList.add("slider__block","fade");
     card.innerHTML = cardInner;

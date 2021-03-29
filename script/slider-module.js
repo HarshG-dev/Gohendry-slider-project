@@ -1,5 +1,4 @@
-function Slider(sliderName, itemsToShow)
-{
+function Slider(sliderName, itemsToShow) {
     this.slides = document.querySelectorAll(sliderName);
     this.itemsToShow = itemsToShow;
     this.currentSlide = 0;
@@ -42,3 +41,5 @@ Slider.prototype.prev = function() {
         this.currentSlide = 0;
     this.init(this.currentSlide);
 }
+
+export { Slider };
