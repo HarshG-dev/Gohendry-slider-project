@@ -40,14 +40,6 @@ img {
     width: 100%;
     height: auto;
 }
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 2;
-    }
-}
 * {
     padding: 0;
     border: 0;
@@ -75,6 +67,7 @@ img {
     font-size: 16px;
     color: #adadad;
     font-weight: bold;
+    line-height: 0.5em;
     text-transform: uppercase;
 }
 .wrapper {
@@ -84,7 +77,7 @@ img {
 .header-container {
     padding: 10px 0;
     position: relative;
-    margin: 0px auto;
+    margin: 26px auto 0;
     width: 100%;
     top: 0;
     text-align: center;
@@ -123,6 +116,14 @@ img {
 }
 .slider__block.fade {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 2;
+    }
 }
 .content__header {
     margin: 19px 0;
@@ -183,10 +184,15 @@ img {
     text-align: center;
     background: #adadad;
 }
-
+/* For smaller devices screen CSS */
 @media(min-width: 767px) and (max-width: 1020px) {
     .slideshow-inner {
         margin: 26px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .slider__block:nth-child(2n+1) {
+        margin-left: 26px;
     }
 }
 @media (min-width: 480px) and (max-width: 768px) {
@@ -200,8 +206,24 @@ img {
         margin-left: 15px;
     }
 }
+@media (min-width: 281px) and (max-width: 479px) {
+    .slider__block {
+        margin: 0 26px;
+        min-width: 95%;
+        height: 390px;
+    }
+    .slider__block:nth-child(2n+1) {
+        margin-left: 0px;
+    }
+}
 @media screen and (max-width: 280px) {
     h1 {
-        font-size: 26px;
+        font-size: 25px;
+    }
+    .slider__block:nth-child(2n+1) {
+        margin: 0 5px;
+    }
+    .slider__block {
+        min-width: 95%;
     }
 }
