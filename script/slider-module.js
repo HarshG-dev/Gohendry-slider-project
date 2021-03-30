@@ -24,7 +24,7 @@ class Slider {
     * starting from startIndex ,#itemstoShow will be displayed
     */
     init(startIndex) {
-        console.log("itemsToShow ",this.itemsToShow," length ",this.slides.length);
+        //console.log("itemsToShow ",this.itemsToShow," length ",this.slides.length);
         let slideIndex = 0;
         if ((startIndex + this.itemsToShow) > this.slides.length)
             startIndex = this.slides.length - this.itemsToShow;
@@ -39,7 +39,7 @@ class Slider {
             }
             slideIndex++;
         });
-        console.log("currentSlide", this.currentSlide);
+        //console.log("currentSlide", this.currentSlide);
     }
     /* 
     * Method: registerNav Attach prev/next navigation buttons to slider
