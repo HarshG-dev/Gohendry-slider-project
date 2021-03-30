@@ -1,5 +1,7 @@
 import { expect, test } from "@jest/globals";
+import { Slider } from "../script/slider-module.js";
 
+//basic dom for testing
 document.body.innerHTML = 
 '<main id="main">' +
 '<div id="slider-one">' +
@@ -18,8 +20,6 @@ document.body.innerHTML =
 '</div>' +
 '</main>';
 
-import { Slider } from "../script/slider-module.js";
-
 test("Testing for slider object creation", () => {
     let mySlider1 = new Slider("#mySlide1",3);
     expect(mySlider1.slides.length).toBe(8);
@@ -32,13 +32,15 @@ test("Testing for slider functionality", () => {
     let nextButton = document.querySelector(".next-one");
     mySlider1.registerNav(prevButton,nextButton);
     expect(mySlider1.currentSlide).toBe(0);
+    //test for slider setup for 1st frame
     mySlider1.init(0);
     expect(mySlider1.currentSlide).toBe(2);
+    //test for next button
     nextButton.click();
     expect(mySlider1.currentSlide).toBe(5);
     nextButton.click();
     expect(mySlider1.currentSlide).toBe(7);
-    // test for nextbutton
+    // test for prev button
     prevButton.click();
     expect(mySlider1.currentSlide).toBe(4);
     prevButton.click();
