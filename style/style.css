@@ -3,7 +3,7 @@ body {
     font-size: 12px;
     margin: 0;
     padding: 0;
-    background: #f6f6f6;
+    background: #ffffff;
     height: 100%;
 }
 h1 {
@@ -46,10 +46,10 @@ img {
     box-sizing: border-box;
 }
 .container {
-    max-width: 1050px;
+    max-width: 1030px;
     overflow: hidden;
     margin: 0 auto;
-    background: #ffffff;
+    background: #f6f6f6;
     display: block;
 }
 .main_area {
@@ -112,7 +112,7 @@ img {
 }
 .slider__content {
     padding: 0 19px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 .slider__block.fade {
     animation: fade 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
@@ -145,9 +145,9 @@ img {
     cursor: pointer;
     color: #2da936;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 26px;
     transition: .6s ease;
-    padding: 0 7px;
+    padding: 0 5px;
 }
 .prev__button:hover,
 .next__button:hover {
