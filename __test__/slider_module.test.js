@@ -35,14 +35,23 @@ test("Testing for slider functionality", () => {
     //test for slider setup for 1st frame
     mySlider1.init(0);
     expect(mySlider1.currentSlide).toBe(2);
+    expect(mySlider1.firstSlideShowing()).toBe(0);
     //test for next button
     nextButton.click();
     expect(mySlider1.currentSlide).toBe(5);
+    expect(mySlider1.firstSlideShowing()).toBe(3);
     nextButton.click();
     expect(mySlider1.currentSlide).toBe(7);
+    expect(mySlider1.firstSlideShowing()).toBe(5);
     // test for prev button
     prevButton.click();
     expect(mySlider1.currentSlide).toBe(4);
+    expect(mySlider1.firstSlideShowing()).toBe(2);
     prevButton.click();
     expect(mySlider1.currentSlide).toBe(2);
+    expect(mySlider1.firstSlideShowing()).toBe(0);
+    //test for error condition when we adjust items to show without init
+    mySlider1.itemsToShow = 4;
+    //still should be giving first slide
+    expect(mySlider1.firstSlideShowing()).toBe(0);
 });
