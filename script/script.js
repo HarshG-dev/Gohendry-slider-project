@@ -114,8 +114,8 @@ function resize() {
     if(mySlider1.itemsToShow != cardBlock) {
         mySlider1.itemsToShow = cardBlock;
         mySlider2.itemsToShow = cardBlock;
-        mySlider1.init(0);
-        mySlider2.init(0);
+        mySlider1.init(mySlider1.firstSlideShowing());
+        mySlider2.init(mySlider2.firstSlideShowing());
     }
 }
 //event handler for window resize

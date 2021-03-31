@@ -42,6 +42,17 @@ class Slider {
         //console.log("currentSlide", this.currentSlide);
     }
     /* 
+    * Method: helper function for working out first slide currently showing
+    * @return {integer} slide number
+    */
+    firstSlideShowing() {
+        let startSlide = (this.currentSlide + 1) - (this.itemsToShow);
+        if (startSlide < 0) {
+            startSlide = 0;
+        }
+        return startSlide;
+    }
+    /* 
     * Method: registerNav Attach prev/next navigation buttons to slider
     * @param   {dom element} prevArrow  prev  (left) naviation button
     * @param   {dom element} NextArrow  next  (right) naviation button
